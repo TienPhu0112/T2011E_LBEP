@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+int main(){
+	float a=4000,b,h,j,c;
+	h=8;j=100;
+	c=h/j;
+	b=a*c;
+	a=a+b;
+    b=a*c;
+	a=a+b;
+	b=a*c;
+	a=a+b;
+	b=a*c;
+	a=a+b;
+	printf("Tien lai sau 4 nam la:%f",a);
+}
