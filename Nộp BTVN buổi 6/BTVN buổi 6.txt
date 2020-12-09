@@ -1,0 +1,85 @@
+#include<stdio.h>
+int main(){
+	int n;
+	printf("Nhap so phan tu cua mang:");
+	scanf("%d",&n);
+	int arr[n];
+	for(int i=0;i<n;i++){
+		printf("Nhap arr[%d]:",i);
+		scanf("%d",&arr[i]);
+	}
+	int check1=0;
+	for(int i=n-1;i>=0;i--){
+		if(arr[i]%2!=0){
+			printf("Phan tu le cuoi cung cua mang la:%d\n",arr[i]);
+			break;
+		}
+		if(arr[i]%2==0){
+			check1++;
+		}
+		if(check1==n-1){
+			printf("Mang khong co so le\n");
+		}
+	}
+	int min=0;
+	for(int i=0;i<n;i++){
+		if(arr[i]>0){
+			min=arr[i];
+			break;
+		}
+	}
+	for(int i=0;i<n;i++){
+		if(arr[i]<min&&arr[i]>0){
+			min=arr[i];
+		}
+	}
+	if(min==0){
+		printf("Mang khong co phan tu duong\n");
+	}else{
+		printf("Phan tu duong nho nhat trong mang la:%d\n",min);
+	}
+	int dem=0,max1=0;
+	for(int i=0;i<n;i++){
+		if(arr[i]>0&&arr[i+1]>0&&i+1<n){
+			dem++;
+		}
+		if(arr[i]>0&&arr[i+1]<0){
+			dem++;
+		}	
+		if(dem>max1){
+			max1=dem;
+		}
+		if(arr[i]>0&&arr[i+1]<0){
+				dem=1;
+		}
+	}
+	if(max1==0){
+		printf("Mang khong co so duong\n");
+	}else{
+		printf("So luong so duong lien tiep nhieu nhat la: %d\n ",max1);
+	}	
+	int tong=0,max2=0;
+	for(int i=0;i<n;i++){
+		if(arr[i]>0&&arr[i+1]>0&&i+1<n){
+			tong=tong+arr[i];
+		}
+		if(arr[i]>0&&arr[i+1]<0&&i+1<n){
+			tong+=arr[i];
+		}
+		if(arr[i]>0&&i+1==n){
+			tong+=arr[i];
+		}
+		if(tong>max2){
+			max2=tong;
+		}
+		if(arr[i]>0&&arr[i+1]<0){
+			tong=0;
+		}
+	}
+	if(max2==0){
+		printf("Mang khong co so duong");
+	}
+	else{
+	printf("Tong cua chuoi so duong lon nhat la:%d\n",max2);
+    } 
+}
