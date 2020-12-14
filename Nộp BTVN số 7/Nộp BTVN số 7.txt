@@ -1,0 +1,60 @@
+Bài 1
+#include<stdio.h>
+
+int main(){
+    int n,x;
+    printf("Nhap n:");
+    scanf("%d",&n);
+    printf("Nhap x:");
+    scanf("%d",&x);
+    int arr[n];
+    for(int i=0;i<n;i++){
+    	printf("Nhap arr[%d]: ",i);
+    	scanf("%d",&arr[i]);
+	}
+	int max;
+	for(int i=0;i<n;i++){
+		if(arr[i]<x){
+			max=arr[i];
+		}
+	}
+	for(int i=0;i<n;i++){
+		if(arr[i]>max&&arr[i]<x){
+			max=arr[i];
+		}
+	}
+	printf("So tiem can duoi cua  trong mang la: %d",max);
+}
+Bài 2
+#include<stdio.h>
+
+int main(){
+    int n;
+    printf("Nhap n:");
+    scanf("%d",&n);
+    int arr[n];
+    int check;
+    for(int i=0;i<n;i++){
+    printf("Nhap arr[%d]",i);
+	scanf("%d",&arr[i]);
+	check=0;
+	for(int j=0;j<i;j++){
+		if(arr[j]==arr[i]){
+			check=1;
+			break;
+		}
+	}	
+	if(check==1){
+	do{
+		printf("So nay da ton tai trong mang\nVui long nhap lai\nNhap arr[%d]:\n",i);
+    	scanf("%d",&arr[i]);
+    	check=0;
+		for(int j=0;j<i;j++){
+		if(arr[j]==arr[i]){
+			check=1;
+			break;
+		}
+	}	
+	}while(check==1);}	
+	}
+}
